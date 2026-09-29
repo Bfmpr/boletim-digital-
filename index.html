@@ -1,1 +1,54 @@
 meu boletim
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Garante que o site funcione bem em celular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boletim Digital</title>
+  <!-- Conecta o CSS que criaremos no próximo passo -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header class="cabecalho">
+    <h1>Boletim Digital</h1>
+    <p class="subtitulo">9º Ano — Estudante Exemplo</p>
+  </header>
+
+  <main class="conteudo">
+
+    <!-- ÁREA DOS CARDS DE RESUMO -->
+    <section class="cards" id="cards">
+      <!-- Os cards serão criados automaticamente pelo JavaScript -->
+    </section>
+
+    <!-- TABELA DE DISCIPLINAS -->
+    <section class="tabela-area">
+      <h2>Notas por Disciplina</h2>
+      <div class="tabela-responsiva">
+        <table id="tabela-boletim">
+          <thead>
+            <tr>
+              <th>Disciplina</th>
+              <th>1º Tri</th>
+              <th>2º Tri</th>
+              <th>3º Tri</th>
+              <th>Média</th>
+              <th>Faltas</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+          <!-- As linhas serão preenchidas pelo JavaScript -->
+          <tbody id="corpo-tabela"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Conecta o JavaScript que criaremos depois -->
+  <script src="script.js"></script>
+</body>
+</html>

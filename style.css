@@ -1,0 +1,188 @@
+/* ============================
+   RESET BÁSICO
+   Remove espaçamentos padrão do navegador
+   ============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============================
+   VARIÁVEIS DE COR
+   Guardam as cores principais do site
+   ============================ */
+:root {
+  --cor-principal: #37474f;   /* cinza chumbo */
+  --cor-secundaria: #7b1e2b;  /* vermelho vinho */
+  --cor-fundo: #f4f5f7;       /* cinza bem claro */
+  --cor-card: #ffffff;        /* branco */
+  --cor-borda: #cfd8dc;       /* cinza claro para bordas */
+  --cor-texto: #263238;       /* cinza escuro para texto */
+}
+
+/* ============================
+   CORPO DA PÁGINA
+   ============================ */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.5;
+  padding-bottom: 40px;
+}
+
+/* ============================
+   CABEÇALHO
+   ============================ */
+.cabecalho {
+  background-color: var(--cor-principal);
+  color: #ffffff;
+  padding: 24px 16px;
+  text-align: center;
+  border-bottom: 4px solid var(--cor-secundaria);
+}
+
+.cabecalho h1 {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.subtitulo {
+  margin-top: 6px;
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+
+/* ============================
+   CONTEÚDO PRINCIPAL
+   ============================ */
+.conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 16px;
+}
+
+/* ============================
+   ÁREA DOS CARDS
+   ============================ */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+/* Card individual */
+.card {
+  background-color: var(--cor-card);
+  border: 1px solid var(--cor-borda);
+  border-left: 5px solid var(--cor-secundaria);
+  border-radius: 6px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Emoji/ícone do card */
+.card .icone {
+  font-size: 1.8rem;
+}
+
+/* Título pequeno do card */
+.card .titulo-card {
+  font-size: 0.85rem;
+  color: var(--cor-principal);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Valor grande do card */
+.card .valor-card {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--cor-texto);
+}
+
+/* ============================
+   ÁREA DA TABELA
+   ============================ */
+.tabela-area h2 {
+  font-size: 1.3rem;
+  color: var(--cor-principal);
+  margin-bottom: 12px;
+  border-left: 5px solid var(--cor-secundaria);
+  padding-left: 10px;
+}
+
+/* Permite rolagem horizontal em telas pequenas */
+.tabela-responsiva {
+  overflow-x: auto;
+  background-color: var(--cor-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px; /* força rolagem em celular */
+}
+
+/* Cabeçalho da tabela */
+thead {
+  background-color: var(--cor-principal);
+  color: #ffffff;
+}
+
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--cor-borda);
+  font-size: 0.92rem;
+}
+
+th {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Faixas alternadas nas linhas */
+tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+/* Texto da situação */
+.situacao-bom {
+  color: #2e7d32; /* verde discreto */
+  font-weight: bold;
+}
+
+.situacao-atencao {
+  color: var(--cor-secundaria); /* vermelho vinho */
+  font-weight: bold;
+}
+
+.situacao-sem-nota {
+  color: #757575; /* cinza */
+  font-style: italic;
+}
+
+/* ============================
+   AJUSTES PARA CELULAR
+   ============================ */
+@media (max-width: 600px) {
+  .cabecalho h1 {
+    font-size: 1.4rem;
+  }
+
+  .subtitulo {
+    font-size: 0.9rem;
+  }
+
+  .card .valor-card {
+    font-size: 1.2rem;
+  }
+}
