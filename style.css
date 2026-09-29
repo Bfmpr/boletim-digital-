@@ -13,7 +13,7 @@
    Guardam as cores principais do site
    ============================ */
 :root {
-  --cor-principal: #37474f;   /* cinza chumbo */
+  --cor-principal: #ffffff;   /* cinza chumbo */
   --cor-secundaria: #7b1e2b;  /* vermelho vinho */
   --cor-fundo: #330505;       /* cinza bem claro */
   --cor-card: #ffffff;        /* branco */
