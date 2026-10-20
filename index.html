@@ -1,4 +1,3 @@
-meu boletim
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -19,32 +18,62 @@ meu boletim
 
   <main class="conteudo">
 
-    <!-- ÁREA DOS CARDS DE RESUMO -->
-    <section class="cards" id="cards">
-      <!-- Os cards serão criados automaticamente pelo JavaScript -->
-    </section>
-
-    <!-- TABELA DE DISCIPLINAS -->
-    <section class="tabela-area">
-      <h2>Notas por Disciplina</h2>
-      <div class="tabela-responsiva">
-        <table id="tabela-boletim">
-          <thead>
-            <tr>
-              <th>Disciplina</th>
-              <th>1º Tri</th>
-              <th>2º Tri</th>
-              <th>3º Tri</th>
-              <th>Média</th>
-              <th>Faltas</th>
-              <th>Situação</th>
-            </tr>
-          </thead>
-          <!-- As linhas serão preenchidas pelo JavaScript -->
-          <tbody id="corpo-tabela"></tbody>
-        </table>
+    <!-- ÁREA DE ACESSO COM PIN -->
+    <section class="area-acesso" id="area-acesso">
+      <div class="card-acesso">
+        <h2>Acesso ao Boletim</h2>
+        <div class="info-aluno">
+          <p><strong>Série:</strong> 9º Ano</p>
+          <p><strong>Turma:</strong> 9C</p>
+          <p><strong>Chamada:</strong> 7</p>
+        </div>
+        <div class="form-login">
+          <label for="campo-pin">Digite seu PIN:</label>
+          <input type="password" id="campo-pin" maxlength="10" placeholder="PIN" />
+          <button id="btn-entrar" onclick="fazerLogin()">Entrar</button>
+        </div>
+        <p id="msg-login" class="mensagem-status"></p>
       </div>
     </section>
+
+    <!-- PAINEL DO BOLETIM (OCULTO ANTES DO LOGIN) -->
+    <div id="painel-boletim" style="display: none;">
+
+      <!-- ÁREA DE AÇÕES DA SESSÃO -->
+      <section class="acoes-boletim">
+        <button id="btn-alterar" onclick="habilitarEdicao()">Alterar dados</button>
+        <button id="btn-salvar" onclick="salvarAlteracoes()" style="display: none;">Salvar alterações</button>
+        <span id="msg-salvar" class="mensagem-status"></span>
+      </section>
+
+      <!-- ÁREA DOS CARDS DE RESUMO -->
+      <section class="cards" id="cards">
+        <!-- Os cards serão criados automaticamente pelo JavaScript -->
+      </section>
+
+      <!-- TABELA DE DISCIPLINAS -->
+      <section class="tabela-area">
+        <h2>Notas por Disciplina</h2>
+        <div class="tabela-responsiva">
+          <table id="tabela-boletim">
+            <thead>
+              <tr>
+                <th>Disciplina</th>
+                <th>1º Tri</th>
+                <th>2º Tri</th>
+                <th>3º Tri</th>
+                <th>Média</th>
+                <th>Faltas</th>
+                <th>Situação</th>
+              </tr>
+            </thead>
+            <!-- As linhas serão preenchidas pelo JavaScript -->
+            <tbody id="corpo-tabela"></tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
 
   </main>
 
