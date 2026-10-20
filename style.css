@@ -1,6 +1,5 @@
 /* ============================
    RESET BÁSICO
-   Remove espaçamentos padrão do navegador
    ============================ */
 * {
   margin: 0;
@@ -9,49 +8,56 @@
 }
 
 /* ============================
-   VARIÁVEIS DE COR
-   Guardam as cores principais do site
+   VARIÁVEIS DE COR (TEMA RETRO ARCADE)
    ============================ */
 :root {
-  --cor-principal: #021af3;   /* azul principal */
-  --cor-secundaria: #7b1e2b;  /* vermelho vinho */
-  --cor-fundo: #330505;       /* vinho escuro */
-  --cor-card: #ffffff;        /* branco */
-  --cor-borda: #cfd8dc;       /* cinza claro para bordas */
-  --cor-texto: #263238;       /* cinza escuro para texto */
+  --cor-fundo: #0d0e15;        /* Fundo bem escuro estilo Arcade */
+  --cor-card: #181a24;         /* Container de elementos */
+  --cor-principal: #00ff66;    /* Verde Neon / Pixel */
+  --cor-secundaria: #ff0055;   /* Rosa Neon / Destaque */
+  --cor-amarelo: #ffe600;       /* Amarelo Arcade */
+  --cor-borda: #00ff66;        /* Borda estilo pixel/neon */
+  --cor-texto: #ffffff;        /* Texto principal */
+  --fonte-pixel: 'Press Start 2P', monospace;
 }
 
 /* ============================
    CORPO DA PÁGINA
    ============================ */
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--fonte-pixel);
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
-  line-height: 1.5;
+  line-height: 1.8;
   padding-bottom: 40px;
+  background-image: 
+    linear-gradient(rgba(0, 255, 102, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 102, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
 /* ============================
    CABEÇALHO
    ============================ */
 .cabecalho {
-  background-color: var(--cor-principal);
-  color: #ffffff;
+  background-color: var(--cor-card);
+  color: var(--cor-principal);
   padding: 24px 16px;
   text-align: center;
   border-bottom: 4px solid var(--cor-secundaria);
+  box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
 }
 
 .cabecalho h1 {
-  font-size: 1.8rem;
-  letter-spacing: 1px;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px var(--cor-secundaria);
 }
 
 .subtitulo {
-  margin-top: 6px;
-  font-size: 1rem;
-  color: #e0e0e0;
+  margin-top: 10px;
+  font-size: 0.65rem;
+  color: var(--cor-amarelo);
 }
 
 /* ============================
@@ -64,259 +70,4 @@ body {
 }
 
 /* ============================
-   ÁREA DE ACESSO (PIN)
-   ============================ */
-.area-acesso {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0 30px 0;
-}
-
-.card-acesso {
-  background-color: var(--cor-card);
-  border: 1px solid var(--cor-borda);
-  border-top: 5px solid var(--cor-principal);
-  border-radius: 8px;
-  padding: 24px;
-  width: 100%;
-  max-width: 380px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.card-acesso h2 {
-  font-size: 1.3rem;
-  color: var(--cor-principal);
-  margin-bottom: 14px;
-  text-align: center;
-}
-
-.info-aluno {
-  background-color: #f0f4f8;
-  border-radius: 6px;
-  padding: 10px 14px;
-  margin-bottom: 16px;
-  font-size: 0.95rem;
-}
-
-.info-aluno p {
-  margin-bottom: 4px;
-}
-
-.info-aluno p:last-child {
-  margin-bottom: 0;
-}
-
-.form-login {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.form-login label {
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: var(--cor-texto);
-}
-
-.form-login input {
-  padding: 10px;
-  border: 1px solid var(--cor-borda);
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-.form-login button, .acoes-boletim button {
-  background-color: var(--cor-principal);
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 16px;
-  font-size: 0.95rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.form-login button:hover, .acoes-boletim button:hover {
-  background-color: #0112b5;
-}
-
-.mensagem-status {
-  margin-top: 12px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  text-align: center;
-  display: block;
-}
-
-.mensagem-status.erro {
-  color: var(--cor-secundaria);
-}
-
-.mensagem-status.sucesso {
-  color: #2e7d32;
-}
-
-.mensagem-status.info {
-  color: #0288d1;
-}
-
-/* ============================
-   ÁREA DE AÇÕES
-   ============================ */
-.acoes-boletim {
-  background-color: var(--cor-card);
-  border: 1px solid var(--cor-borda);
-  border-radius: 6px;
-  padding: 14px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-/* ============================
-   CAMPOS DE EDIÇÃO NA TABELA
-   ============================ */
-.input-edicao {
-  width: 55px;
-  padding: 4px;
-  font-size: 0.9rem;
-  border: 1px solid var(--cor-borda);
-  border-radius: 4px;
-  text-align: center;
-}
-
-.input-edicao.invalido {
-  border: 2px solid var(--cor-secundaria);
-  background-color: #ffebee;
-}
-
-/* ============================
-   ÁREA DOS CARDS
-   ============================ */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 14px;
-  margin-bottom: 30px;
-}
-
-/* Card individual */
-.card {
-  background-color: var(--cor-card);
-  border: 1px solid var(--cor-borda);
-  border-left: 5px solid var(--cor-secundaria);
-  border-radius: 6px;
-  padding: 16px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-/* Emoji/ícone do card */
-.card .icone {
-  font-size: 1.8rem;
-}
-
-/* Título pequeno do card */
-.card .titulo-card {
-  font-size: 0.85rem;
-  color: var(--cor-principal);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* Valor grande do card */
-.card .valor-card {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: var(--cor-texto);
-}
-
-/* ============================
-   ÁREA DA TABELA
-   ============================ */
-.tabela-area h2 {
-  font-size: 1.3rem;
-  color: var(--cor-principal);
-  margin-bottom: 12px;
-  border-left: 5px solid var(--cor-secundaria);
-  padding-left: 10px;
-  background-color: var(--cor-card);
-  padding-top: 6px;
-  padding-bottom: 6px;
-  border-radius: 0 4px 4px 0;
-}
-
-/* Permite rolagem horizontal em telas pequenas */
-.tabela-responsiva {
-  overflow-x: auto;
-  background-color: var(--cor-card);
-  border: 1px solid var(--cor-borda);
-  border-radius: 6px;
-}
-
-/* Tabela */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 720px; /* força rolagem em celular */
-}
-
-/* Cabeçalho da tabela */
-thead {
-  background-color: var(--cor-principal);
-  color: #ffffff;
-}
-
-th, td {
-  padding: 10px 12px;
-  text-align: left;
-  border-bottom: 1px solid var(--cor-borda);
-  font-size: 0.92rem;
-}
-
-th {
-  font-weight: bold;
-  white-space: nowrap;
-}
-
-/* Faixas alternadas nas linhas */
-tbody tr:nth-child(even) {
-  background-color: #f9fafb;
-}
-
-/* Texto da situação */
-.situacao-bom {
-  color: #2e7d32; /* verde discreto */
-  font-weight: bold;
-}
-
-.situacao-atencao {
-  color: var(--cor-secundaria); /* vermelho vinho */
-  font-weight: bold;
-}
-
-.situacao-sem-nota {
-  color: #757575; /* cinza */
-  font-style: italic;
-}
-
-/* ============================
-   AJUSTES PARA CELULAR
-   ============================ */
-@media (max-width: 600px) {
-  .cabecalho h1 {
-    font-size: 1.4rem;
-  }
-
-  .subtitulo {
-    font-size: 0.9rem;
-  }
-
-  .card .valor-card {
-    font-size: 1.2rem;
-  }
-}
+   ÁREA DE ACESSO (

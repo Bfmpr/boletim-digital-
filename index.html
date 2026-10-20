@@ -4,33 +4,37 @@
   <meta charset="UTF-8" />
   <!-- Garante que o site funcione bem em celular -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Boletim Digital</title>
-  <!-- Conecta o CSS que criaremos no próximo passo -->
+  <title>Boletim Digital — Player Stats</title>
+  <!-- Fonte Retro Pixel de Video Game -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- Conecta o CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- CABEÇALHO -->
+  <!-- CABEÇALHO STYLE ARCADE -->
   <header class="cabecalho">
-    <h1>Boletim Digital</h1>
-    <p class="subtitulo">9º Ano — Estudante Exemplo</p>
+    <h1>BOLETIM DIGITAL</h1>
+    <p class="subtitulo">PRESS START TO PLAY — 9º ANO (9C)</p>
   </header>
 
   <main class="conteudo">
 
-    <!-- ÁREA DE ACESSO COM PIN -->
+    <!-- ÁREA DE ACESSO COM PIN (GAME LOGIN) -->
     <section class="area-acesso" id="area-acesso">
       <div class="card-acesso">
-        <h2>Acesso ao Boletim</h2>
+        <h2>PLAYER LOGIN</h2>
         <div class="info-aluno">
-          <p><strong>Série:</strong> 9º Ano</p>
-          <p><strong>Turma:</strong> 9C</p>
-          <p><strong>Chamada:</strong> 7</p>
+          <p><strong>FASE / SÉRIE:</strong> 9º ANO</p>
+          <p><strong>TURMA:</strong> 9C</p>
+          <p><strong>PLAYER Nº:</strong> 07</p>
         </div>
         <div class="form-login">
-          <label for="campo-pin">Digite seu PIN:</label>
-          <input type="password" id="campo-pin" maxlength="10" placeholder="PIN" />
-          <button id="btn-entrar" onclick="fazerLogin()">Entrar</button>
+          <label for="campo-pin">DIGITE SEU PIN DE ACESSO:</label>
+          <input type="password" id="campo-pin" maxlength="10" placeholder="****" />
+          <button id="btn-entrar" onclick="fazerLogin()">START GAME</button>
         </div>
         <p id="msg-login" class="mensagem-status"></p>
       </div>
@@ -41,30 +45,30 @@
 
       <!-- ÁREA DE AÇÕES DA SESSÃO -->
       <section class="acoes-boletim">
-        <button id="btn-alterar" onclick="habilitarEdicao()">Alterar dados</button>
-        <button id="btn-salvar" onclick="salvarAlteracoes()" style="display: none;">Salvar alterações</button>
+        <button id="btn-alterar" onclick="habilitarEdicao()">EDIT STATS</button>
+        <button id="btn-salvar" onclick="salvarAlteracoes()" style="display: none;">SAVE STATS</button>
         <span id="msg-salvar" class="mensagem-status"></span>
       </section>
 
-      <!-- ÁREA DOS CARDS DE RESUMO -->
+      <!-- ÁREA DOS CARDS DE RESUMO (STATS) -->
       <section class="cards" id="cards">
         <!-- Os cards serão criados automaticamente pelo JavaScript -->
       </section>
 
       <!-- TABELA DE DISCIPLINAS -->
       <section class="tabela-area">
-        <h2>Notas por Disciplina</h2>
+        <h2>LEVEL STATS / NOTAS</h2>
         <div class="tabela-responsiva">
           <table id="tabela-boletim">
             <thead>
               <tr>
-                <th>Disciplina</th>
-                <th>1º Tri</th>
-                <th>2º Tri</th>
-                <th>3º Tri</th>
-                <th>Média</th>
-                <th>Faltas</th>
-                <th>Situação</th>
+                <th>DISCIPLINA</th>
+                <th>1º TRI</th>
+                <th>2º TRI</th>
+                <th>3º TRI</th>
+                <th>MÉDIA</th>
+                <th>FALTAS</th>
+                <th>STATUS</th>
               </tr>
             </thead>
             <!-- As linhas serão preenchidas pelo JavaScript -->
@@ -77,7 +81,7 @@
 
   </main>
 
-  <!-- Conecta o JavaScript que criaremos depois -->
+  <!-- Conecta o JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
