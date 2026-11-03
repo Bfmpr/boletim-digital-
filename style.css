@@ -11,13 +11,13 @@
    VARIÁVEIS DE COR (TEMA RETRO ARCADE)
    ============================ */
 :root {
-  --cor-fundo: #0d0e15;        /* Fundo bem escuro estilo Arcade */
-  --cor-card: #181a24;         /* Container de elementos */
-  --cor-principal: #00ff66;    /* Verde Neon / Pixel */
-  --cor-secundaria: #ff0055;   /* Rosa Neon / Destaque */
-  --cor-amarelo: #ffe600;       /* Amarelo Arcade */
-  --cor-borda: #00ff66;        /* Borda estilo pixel/neon */
-  --cor-texto: #ffffff;        /* Texto principal */
+  --cor-fundo: #0d0e15;
+  --cor-card: #181a24;
+  --cor-principal: #00ff66;
+  --cor-secundaria: #ff0055;
+  --cor-amarelo: #ffe600;
+  --cor-borda: #00ff66;
+  --cor-texto: #ffffff;
   --fonte-pixel: 'Press Start 2P', monospace;
 }
 
@@ -96,4 +96,210 @@ body {
 
 .info-aluno p {
   font-size: 0.65rem;
-  margin-
+  margin-bottom: 8px;
+}
+
+.form-login {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-login label {
+  font-size: 0.6rem;
+  color: var(--cor-principal);
+}
+
+.form-login input {
+  font-family: var(--fonte-pixel);
+  padding: 10px;
+  background-color: var(--cor-fundo);
+  border: 2px solid var(--cor-borda);
+  color: var(--cor-texto);
+  font-size: 0.8rem;
+  text-align: center;
+  outline: none;
+}
+
+.form-login button, .acoes-boletim button {
+  font-family: var(--fonte-pixel);
+  padding: 12px;
+  background-color: var(--cor-secundaria);
+  border: none;
+  color: var(--cor-texto);
+  font-size: 0.7rem;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px #000;
+  transition: transform 0.1s;
+}
+
+.form-login button:hover, .acoes-boletim button:hover {
+  transform: translate(-2px, -2px);
+}
+
+.mensagem-status {
+  font-size: 0.6rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* ============================
+   ÁREA DE AÇÕES
+   ============================ */
+.acoes-boletim {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* ============================
+   CARDS DE ESTATÍSTICAS
+   ============================ */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.card {
+  background-color: var(--cor-card);
+  border: 2px solid var(--cor-borda);
+  padding: 16px;
+  box-shadow: 0 0 10px rgba(0, 255, 102, 0.2);
+}
+
+.card h3 {
+  font-size: 0.65rem;
+  color: var(--cor-amarelo);
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 1.1rem;
+  color: var(--cor-principal);
+}
+
+/* ============================
+   TABELA DE DISCIPLINAS
+   ============================ */
+.tabela-area h2 {
+  font-size: 0.9rem;
+  color: var(--cor-principal);
+  margin-bottom: 12px;
+}
+
+.tabela-responsiva {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--cor-card);
+  border: 2px solid var(--cor-borda);
+  font-size: 0.6rem;
+}
+
+th, td {
+  padding: 10px 8px;
+  text-align: center;
+  border: 1px solid rgba(0, 255, 102, 0.2);
+}
+
+th {
+  background-color: #12141d;
+  color: var(--cor-amarelo);
+}
+
+td input {
+  font-family: var(--fonte-pixel);
+  width: 50px;
+  padding: 4px;
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto);
+  text-align: center;
+  font-size: 0.6rem;
+}
+
+/* ============================
+   ESTILOS EXCLUSIVOS DOS GRÁFICOS
+   ============================ */
+.area-graficos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.grafico-card {
+  background-color: var(--cor-card);
+  border: 2px solid var(--cor-borda);
+  padding: 16px;
+  box-shadow: 0 0 10px rgba(0, 255, 102, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.grafico-card h2 {
+  font-size: 0.7rem;
+  color: var(--cor-amarelo);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.grafico-container {
+  position: relative;
+  width: 100%;
+  height: 320px;
+}
+
+#estadoFaltas {
+  text-align: center;
+  margin-bottom: 8px;
+  min-height: 24px;
+}
+
+.badge-perigo {
+  display: inline-block;
+  background-color: var(--cor-secundaria);
+  color: #ffffff;
+  font-size: 0.6rem;
+  padding: 4px 8px;
+  border: 1px solid #ffffff;
+  box-shadow: 0 0 8px rgba(255, 0, 85, 0.8);
+  animation: pulso-perigo 1.5s infinite;
+}
+
+.card-perigo {
+  border-color: var(--cor-secundaria) !important;
+  box-shadow: 0 0 15px rgba(255, 0, 85, 0.5) !important;
+}
+
+@keyframes pulso-perigo {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Media Queries para Responsividade dos Gráficos */
+@media (max-width: 992px) {
+  .area-graficos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .area-graficos {
+    grid-template-columns: 1fr;
+  }
+  
+  .grafico-container {
+    height: 260px;
+  }
+}
