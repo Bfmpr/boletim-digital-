@@ -124,3 +124,109 @@ function preencherTabela() {
         <td>${formatarNotaExibicao(d.tri2)}</td>
         <td>${formatarNotaExibicao(d.tri3)}</td>
         <td>${mediaFormatada}</td>
+        <td>${totalFaltas}</td>
+        <td>${status}</td>
+      `;
+    }
+
+    corpoTabela.appendChild(tr);
+  });
+}
+
+function preencherCards() {
+  const containerCards = document.getElementById("cards");
+  if (!containerCards) return;
+
+  const lista = (dadosAtuais && dadosAtuais.disciplinas) ? dadosAtuais.disciplinas : disciplinasPadrao;
+
+  let somaMedias = 0;
+  let countMedias = 0;
+  let totalFaltasGeral = 0;
+
+  lista.forEach(d => {
+    const m = calcularMediaDisciplina(d);
+    if (m !== null) {
+      somaMedias += m;
+      countMedias++;
+    }
+    totalFaltasGeral += calcularTotalFaltasDisciplina(d);
+  });
+
+  const mediaGeral = countMedias > 0 ? (somaMedias / countMedias).toFixed(1).replace(".", ",") : "-";
+
+  containerCards.innerHTML = `
+    <div class="card">
+      <h3>MÉDIA GERAL</h3>
+      <p>${mediaGeral}</p>
+    </div>
+    <div class="card">
+      <h3>TOTAL DISCIPLINAS</h3>
+      <p>${lista.length}</p>
+    </div>
+    <div class="card">
+      <h3>TOTAL DE FALTAS</h3>
+      <p>${totalFaltasGeral}</p>
+    </div>
+  `;
+}
+
+function atualizarTela() {
+  preencherCards();
+  preencherTabela();
+  atualizarGraficos();
+}
+
+// ------------------------------------------------------------
+// 5) CAMADA EXCLUSIVA DOS GRÁFICOS (SOMENTE LEITURA)
+// ------------------------------------------------------------
+function atualizarGraficoMedias() {
+  const canvas = document.getElementById("graficoMediasDisciplinas");
+  if (!canvas) return;
+
+  const lista = (dadosAtuais && dadosAtuais.disciplinas) ? dadosAtuais.disciplinas : disciplinasPadrao;
+  
+  const labels = lista.map(d => d.disciplina);
+  const data = lista.map(d => {
+    const m = calcularMediaDisciplina(d);
+    return m !== null ? parseFloat(m.toFixed(1)) : null;
+  });
+
+  if (graficoMedias) {
+    graficoMedias.destroy();
+  }
+
+  graficoMedias = new Chart(canvas, {
+    type: "bar",
+    data: {
+      labels: labels,
+      datasets: [{
+        label: "Média",
+        data: data,
+        backgroundColor: "#00ff66",
+        borderColor: "#00ff66",
+        borderWidth: 1
+      }]
+    },
+    options: {
+      indexAxis: "y",
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        x: {
+          min: 0,
+          max: 10,
+          ticks: { color: "#ffffff" },
+          grid: { color: "rgba(0, 255, 102, 0.1)" }
+        },
+        y: {
+          ticks: { color: "#ffffff", font: { size: 9 } },
+          grid: { color: "rgba(0, 255, 102, 0.1)" }
+        }
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              const val = context.raw;
+              return val === null ?
