@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- Chart.js para os gráficos -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- Conecta o CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -53,6 +55,31 @@
       <!-- ÁREA DOS CARDS DE RESUMO (STATS) -->
       <section class="cards" id="cards">
         <!-- Os cards serão criados automaticamente pelo JavaScript -->
+      </section>
+
+      <!-- ÁREA DOS GRÁFICOS -->
+      <section class="area-graficos">
+        <article class="grafico-card">
+          <h2>Média por disciplina</h2>
+          <div class="grafico-container">
+            <canvas id="graficoMediasDisciplinas"></canvas>
+          </div>
+        </article>
+
+        <article class="grafico-card">
+          <h2>Evolução da média geral</h2>
+          <div class="grafico-container">
+            <canvas id="graficoEvolucaoTrimestres"></canvas>
+          </div>
+        </article>
+
+        <article class="grafico-card" id="cardFaltas">
+          <h2>Faltas por trimestre</h2>
+          <div id="estadoFaltas"></div>
+          <div class="grafico-container">
+            <canvas id="graficoFaltasTrimestres"></canvas>
+          </div>
+        </article>
       </section>
 
       <!-- TABELA DE DISCIPLINAS -->

@@ -70,4 +70,30 @@ body {
 }
 
 /* ============================
-   ÁREA DE ACESSO (
+   ÁREA DE ACESSO (LOGIN)
+   ============================ */
+.area-acesso {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.card-acesso {
+  background-color: var(--cor-card);
+  border: 2px solid var(--cor-borda);
+  padding: 24px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+}
+
+.card-acesso h2 {
+  font-size: 1rem;
+  color: var(--cor-amarelo);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.info-aluno p {
+  font-size: 0.65rem;
+  margin-

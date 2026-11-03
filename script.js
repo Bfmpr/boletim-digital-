@@ -27,4 +27,20 @@ const disciplinasPadrao = [
   { disciplina: "Língua Inglesa", tri1: 88, tri2: 8.4, tri3: null, faltas: [1, 0, 1] },
   { disciplina: "Arte", tri1: "9,2", tri2: 87, tri3: 9.0, faltas: [1, 1, 0] },
   { disciplina: "Educação Física", tri1: 96, tri2: "9,3", tri3: null, faltas: [0, 1, 0] },
-  { disciplina: "Educação Digital
+  { disciplina: "Educação Digital", tri1: 85, tri2: "8,8", tri3: 9.1, faltas: [0, 0, 0] }
+];
+
+// Estado atual dos dados em memória
+let dadosAtuais = null;
+let modoEdicao = false;
+
+// Instâncias globais dos gráficos (isoladas)
+let graficoMedias = null;
+let graficoEvolucao = null;
+let graficoFaltas = null;
+
+// ------------------------------------------------------------
+// 3) NÚCLEO DE UTILS & CÁLCULOS EXISTENTES (IMUTÁVEL)
+// ------------------------------------------------------------
+function normalizarNota(valor) {
+  if (
