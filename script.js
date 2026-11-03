@@ -30,7 +30,6 @@ const disciplinasPadrao = [
   { disciplina: "Educação Digital", tri1: 85, tri2: "8,8", tri3: 9.1, faltas: [0, 0, 0] },
   { disciplina: "Educação Financeira", tri1: null, tri2: null, tri3: null, faltas: [0, 0, 0] },
   { disciplina: "Rec Aprend Matemática", tri1: null, tri2: null, tri3: null, faltas: [0, 0, 0] },
-  { disciplina: "Leitura", tri1: null, tri2: null, tri3: null, faltas: [0, 0, 0] },
   { disciplina: "Rec Aprend Língua Portuguesa", tri1: null, tri2: null, tri3: null, faltas: [0, 0, 0] },
   { disciplina: "Pensamento Lógico", tri1: null, tri2: null, tri3: null, faltas: [0, 0, 0] },
   { disciplina: "Literatura Arte e Movimento", tri1: null, tri2: null, tri3: null, faltas: [0, 0, 0] },
